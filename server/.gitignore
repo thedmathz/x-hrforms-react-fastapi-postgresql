@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+.venv/
+.env/
+
+# FastAPI / Uvicorn
+*.log
+
+# Environment variables
+.env
+
+# OS
+.DS_Store
+Thumbs.db

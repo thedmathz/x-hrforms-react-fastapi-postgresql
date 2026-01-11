@@ -8,6 +8,9 @@ from alembic import context
 from app.core.config import settings
 from app.db.base import Base
 
+# import all models here to ensure they are registered with Alembic
+import app.db.init_models
+
 # Interpret the config file for Python logging.
 config = context.config
 fileConfig(config.config_file_name)

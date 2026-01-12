@@ -60,5 +60,6 @@ It enables employees, recommenders, and approvers to manage applications efficie
 The system uses a relational PostgreSQL database to manage users, applications, approvals, and organizational structure.
 
 > 📌 **Database Schema**
-> ![Uploading Untitled (1).png…]()
+> <img width="1249" height="1217" alt="Database Schema" src="https://github.com/user-attachments/assets/a3a7b48f-50e8-4fe4-9c64-7a3000dd2640" />
+
 

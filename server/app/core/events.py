@@ -4,8 +4,8 @@ from app.db.base import Base
 
 def create_start_app_handler(app: FastAPI):
     async def start_app() -> None:
-        async with engine.begin() as conn:
-            await conn.run_sync(Base.metadata.create_all)
+        # async with engine.begin() as conn:
+        #     await conn.run_sync(Base.metadata.create_all)
         print("🚀 Application started")
     return start_app
 

@@ -9,6 +9,13 @@ class Settings(BaseSettings):
     POSTGRES_DB: str
     POSTGRES_USER: str
     POSTGRES_PASSWORD: str = ""
+    
+    SMTP_HOST: str
+    SMTP_PORT: int
+    SMTP_USER: str
+    SMTP_PASS: str
+    SMTP_FROM_NAME: str
+    SMTP_FROM_EMAIL: str
 
     @property
     def DATABASE_URL(self) -> str:

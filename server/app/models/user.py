@@ -22,5 +22,5 @@ class User(Base):
     birth_date              = Column(DATE, nullable=True) 
     email                   = Column(TEXT, nullable=False) 
     email_otp               = Column(VARCHAR(6), nullable=False) 
-    email_otp_valid_until   = Column(TIMESTAMP, nullable=True) 
+    email_otp_valid_until   = Column(TIMESTAMP(timezone=True), nullable=True) 
     status                  = Column(SMALLINT, nullable=False) 

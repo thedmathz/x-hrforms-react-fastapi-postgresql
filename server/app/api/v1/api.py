@@ -26,7 +26,7 @@ api_router.include_router(change_password.router, prefix="/change-password", tag
 # api_router.include_router(dashboard.router, prefix="/dashboard", tags=["Dashboard"])
 # api_router.include_router(my_applications.router, prefix="/my-applications", tags=["My Applications"])
 # api_router.include_router(for_approvals.router, prefix="/for-approvals", tags=["For Approvals"])
-# api_router.include_router(offices.router, prefix="/offices", tags=["Offices"])
+api_router.include_router(offices.router, prefix="/offices", tags=["Offices"])
 api_router.include_router(positions.router, prefix="/positions", tags=["Positions"])
 # api_router.include_router(users.router, prefix="/users", tags=["Users"])
 # api_router.include_router(user_types.router, prefix="/user-types", tags=["User Types"])

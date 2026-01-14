@@ -1,29 +1,31 @@
 from fastapi import APIRouter, Depends
 from sqlalchemy.ext.asyncio import AsyncSession
 from app.db.session import get_db
-from app.services.position_service import PositionService
 
+from app.core.dependencies import get_current_user
+
+from app.services.position_service import PositionService
 from app.schemas.position import PositionInsert, PositionUpdate
 
 router  = APIRouter()
 service = PositionService()
 
-@router.get("/")
-async def index(db: AsyncSession = Depends(get_db)):
+@router.get("/") 
+async def index(db: AsyncSession = Depends(get_db), current_user_id: str = Depends(get_current_user)):
     return await service.index(db)
 
 @router.post("/")
-async def insert(form_request: PositionInsert, db: AsyncSession = Depends(get_db)):
+async def insert(form_request: PositionInsert, db: AsyncSession = Depends(get_db), current_user_id: str = Depends(get_current_user)):
     return await service.insert(db, form_request) 
 
 @router.get("/{id}")
-async def view(id: str, db: AsyncSession = Depends(get_db)):
+async def view(id: str, db: AsyncSession = Depends(get_db), current_user_id: str = Depends(get_current_user)):
     return await service.view(db, id) 
 
 @router.put("/{id}")
-async def update(id: str, form_request: PositionUpdate, db: AsyncSession = Depends(get_db)):
+async def update(id: str, form_request: PositionUpdate, db: AsyncSession = Depends(get_db), current_user_id: str = Depends(get_current_user)):
     return await service.update(db, id, form_request)
 
 @router.delete("/{id}")
-async def delete(id: str, db: AsyncSession = Depends(get_db)):
+async def delete(id: str, db: AsyncSession = Depends(get_db), current_user_id: str = Depends(get_current_user)):
     return await service.delete(db, id)

@@ -2,7 +2,11 @@ from pydantic_settings import BaseSettings
 
 class Settings(BaseSettings):
     
+    PROJECT_NAME: str
+    PROJECT_VERSION: str
     SECRET_KEY: str
+    ACCESS_SECRET_KEY: str
+    ENVIRONMENT: str
     
     POSTGRES_HOST: str
     POSTGRES_PORT: int
@@ -16,6 +20,10 @@ class Settings(BaseSettings):
     SMTP_PASS: str
     SMTP_FROM_NAME: str
     SMTP_FROM_EMAIL: str
+    
+    JWT_ALGORITHM: str
+    REFRESH_TOKEN_EXPIRE_MINUTES: int
+    ACCESS_TOKEN_EXPIRE_MINUTES: int
 
     @property
     def DATABASE_URL(self) -> str:

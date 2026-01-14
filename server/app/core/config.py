@@ -5,6 +5,7 @@ class Settings(BaseSettings):
     PROJECT_NAME: str
     PROJECT_VERSION: str
     SECRET_KEY: str
+    ACCESS_SECRET_KEY: str
     ENVIRONMENT: str
     
     POSTGRES_HOST: str

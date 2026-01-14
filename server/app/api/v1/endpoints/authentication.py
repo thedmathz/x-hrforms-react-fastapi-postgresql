@@ -2,7 +2,7 @@ from fastapi import APIRouter, Depends, Cookie
 from sqlalchemy.ext.asyncio import AsyncSession
 from app.db.session import get_db
 
-from app.core.dependencies import get_current_user, get_refresh_current_user
+from app.core.dependencies import get_current_user, get_refresh_identity
 
 from app.services.authentication_service import AuthenticationService
 from app.schemas.authentication import AuthenticationLogin
@@ -19,8 +19,8 @@ async def me(db: AsyncSession = Depends(get_db), current_user_id: str = Depends(
     return await service.me(db, int(current_user_id)) 
 
 @router.post("/refresh")
-async def refresh(db: AsyncSession = Depends(get_db), context: str = Depends(get_refresh_current_user)):
-    return await service.refresh(db, context) 
+async def refresh(identity: dict = Depends(get_refresh_identity)):
+    return await service.refresh(identity) 
 
 @router.post("/logout")
 async def logout(db: AsyncSession = Depends(get_db), token: str = Cookie(None)):

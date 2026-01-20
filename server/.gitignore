@@ -76,3 +76,6 @@ alembic/env.pyc
 # Misc
 *.DS_Store
 *.pytest_cache/
+
+# 
+media/uploads/user_profile_pictures/*

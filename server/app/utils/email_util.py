@@ -1,4 +1,5 @@
 import aiosmtplib
+import re
 
 from email.message import EmailMessage
 from email.utils import formataddr
@@ -10,6 +11,10 @@ SMTP_USER       = settings.SMTP_USER
 SMTP_PASS       = settings.SMTP_PASS 
 SMTP_FROM_NAME  = settings.SMTP_FROM_NAME 
 SMTP_FROM_EMAIL = settings.SMTP_FROM_EMAIL 
+
+def is_valid_email(email):
+    pattern = r'^[\w\.-]+@[\w\.-]+\.\w+$'
+    return re.match(pattern, email) is not None
 
 async def send_email(to_email: str, subject: str, body: str, html: bool = False):
     

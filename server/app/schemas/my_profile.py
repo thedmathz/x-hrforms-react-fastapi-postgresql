@@ -1,18 +1,17 @@
 from pydantic import BaseModel
 from typing import Optional
+from datetime import date
 
-class MyProfileGetRow(BaseModel):
-    code    : str
-    name    : str
+class MyProfileUpdate(BaseModel): 
 
-class MyProfileGetRowWithId(MyProfileGetRow):
-    my_profile_id : int
+    first_name: str 
+    middle_name: str 
+    last_name: str 
+    gender: int 
+    birth_date: date 
 
-class MyProfileGetRowsList(BaseModel):
-    records: list[MyProfileGetRowWithId] 
-    
-class MyProfileInsert(BaseModel):
-    code: str
-    name: str
+class MyProfileEmailOtp(BaseModel): 
+    email: str
 
-class MyProfileUpdate(MyProfileInsert): pass
+class MyProfileEmailUpdate(MyProfileEmailOtp): 
+    email_otp: str

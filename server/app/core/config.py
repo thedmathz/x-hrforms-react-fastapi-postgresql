@@ -24,6 +24,7 @@ class Settings(BaseSettings):
     JWT_ALGORITHM: str
     REFRESH_TOKEN_EXPIRE_MINUTES: int
     ACCESS_TOKEN_EXPIRE_MINUTES: int
+    EMAIL_OTP_EXPIRY_MINUTES: int
 
     @property
     def DATABASE_URL(self) -> str:

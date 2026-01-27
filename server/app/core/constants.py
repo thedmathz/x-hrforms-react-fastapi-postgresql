@@ -1,17 +1,17 @@
 APP_ACTIONS = [
     {
         "app_action_id" : 1,
-        "name"          : "Export List", 
+        "name"          : "Index", 
         "rank"          : 1,
     }, 
     {
         "app_action_id" : 2,
-        "name"          : "Print List", 
+        "name"          : "Export List", 
         "rank"          : 2,
     }, 
     {
         "app_action_id" : 3,
-        "name"          : "Index", 
+        "name"          : "Print List", 
         "rank"          : 3,
     }, 
     {
@@ -56,13 +56,13 @@ APP_MODULES = [
         "app_module_id" : 1, 
         "name"          : "Dashboard", 
         "rank"          : 1,
-        "actions"       : [3],
+        "actions"       : [1],
     }, 
     {
         "app_module_id" : 2, 
         "name"          : "My Applications", 
         "rank"          : 2,
-        "actions"       : [3, 4, 5, 7, 10],
+        "actions"       : [1, 4, 5, 7, 10],
     }, 
     {
         "app_module_id" : 3, 
@@ -74,24 +74,24 @@ APP_MODULES = [
         "app_module_id" : 4, 
         "name"          : "Offices", 
         "rank"          : 4,
-        "actions"       : [3, 4, 5, 6],
+        "actions"       : [1, 4, 5, 6],
     }, 
     {
         "app_module_id" : 5, 
         "name"          : "Positions", 
         "rank"          : 5,
-        "actions"       : [3, 4, 5, 6],
+        "actions"       : [1, 4, 5, 6],
     }, 
     {
         "app_module_id" : 6, 
         "name"          : "Users", 
         "rank"          : 6,
-        "actions"       : [3, 4, 5, 6, 8, 9], 
+        "actions"       : [1, 4, 5, 6, 8, 9], 
     }, 
     {
         "app_module_id" : 7, 
         "name"          : "User Types",
         "rank"          : 7,
-        "actions"       : [3, 4, 5, 6],
+        "actions"       : [1, 4, 5, 6],
     }, 
 ]

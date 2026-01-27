@@ -1,8 +1,8 @@
 """create tables
 
-Revision ID: 027af728ff54
+Revision ID: b02e59d5495e
 Revises: 
-Create Date: 2026-01-13 11:57:21.440022
+Create Date: 2026-01-27 17:07:11.743029
 
 """
 from typing import Sequence, Union
@@ -12,7 +12,7 @@ import sqlalchemy as sa
 from sqlalchemy.dialects import postgresql
 
 # revision identifiers, used by Alembic.
-revision: str = '027af728ff54'
+revision: str = 'b02e59d5495e'
 down_revision: Union[str, Sequence[str], None] = None
 branch_labels: Union[str, Sequence[str], None] = None
 depends_on: Union[str, Sequence[str], None] = None
@@ -78,9 +78,13 @@ def upgrade() -> None:
     sa.Column('last_name', sa.VARCHAR(length=30), nullable=False),
     sa.Column('gender', sa.SMALLINT(), nullable=False),
     sa.Column('birth_date', sa.DATE(), nullable=True),
+    sa.Column('date_email_validated', postgresql.TIMESTAMP(timezone=True), nullable=True),
     sa.Column('email', sa.TEXT(), nullable=False),
     sa.Column('email_otp', sa.VARCHAR(length=6), nullable=False),
     sa.Column('email_otp_valid_until', postgresql.TIMESTAMP(timezone=True), nullable=True),
+    sa.Column('forgot_password_otp', sa.VARCHAR(length=6), nullable=False),
+    sa.Column('forgot_password_otp_valid_until', postgresql.TIMESTAMP(timezone=True), nullable=True),
+    sa.Column('picture_path', sa.TEXT(), nullable=False),
     sa.Column('status', sa.SMALLINT(), nullable=False),
     sa.ForeignKeyConstraint(['office_id'], ['offices.office_id'], ),
     sa.ForeignKeyConstraint(['position_id'], ['positions.position_id'], ),

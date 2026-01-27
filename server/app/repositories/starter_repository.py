@@ -84,20 +84,22 @@ class StarterRepository:
         position_id: int
     ) -> int:
         obj = User(
-            user_type_id=user_type_id,
-            office_id=office_id,
-            position_id=position_id,
-            username=username, 
-            password=argon2_encrypt(username), 
-            first_name=username, 
-            middle_name="", 
-            last_name=username, 
-            gender=1, 
-            birth_date=date(1997, 8, 16), 
-            email= "", 
-            email_otp="", 
-            email_otp_valid_until=None, 
-            status=1
+            user_type_id            = user_type_id,
+            office_id               = office_id,
+            position_id             = position_id,
+            username                = username, 
+            password                = argon2_encrypt(username), 
+            first_name              = username, 
+            middle_name             = "", 
+            last_name               = username, 
+            gender                  = 1, 
+            birth_date              = date(1997, 8, 16), 
+            email                   = "", 
+            email_otp               = "", 
+            email_otp_valid_until   = None, 
+            forgot_password_otp     = "", 
+            picture_path            = "", 
+            status                  = 1
         )
         db.add(obj)
         await db.flush()

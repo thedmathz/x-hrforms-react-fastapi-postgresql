@@ -24,5 +24,7 @@ class User(Base):
     email                   = Column(TEXT, nullable=False) 
     email_otp               = Column(VARCHAR(6), nullable=False) 
     email_otp_valid_until   = Column(TIMESTAMP(timezone=True), nullable=True) 
+    forgot_password_otp     = Column(VARCHAR(6), nullable=False) 
+    forgot_password_otp_valid_until = Column(TIMESTAMP(timezone=True), nullable=True) 
     picture_path            = Column(TEXT, nullable=False) 
     status                  = Column(SMALLINT, nullable=False) 

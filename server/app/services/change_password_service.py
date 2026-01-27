@@ -58,11 +58,11 @@ class ChangePasswordService:
         if form_request.password_new != form_request.password_confirm:
             response_api(400, "New password and confirm password do not match", "Invalid")
         
-        # alphanumeric password requirement 
+        # password requirement 
         if not is_strong_password(form_request.password_new):
-            response_api(400, "Password must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, and one digit.", "Weak Password")
+            response_api(400, "Password must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, one digit, and one special character.", "Weak Password")
         
         # change password
-        await self.repo.index(db, int(current_user_id), argon2_encrypt(form_request.password_new))
+        await self.repo.index(db, int(current_user_id), argon2_encrypt(form_request.password_new)) 
         
         return JSONResponse(status_code=200, content=data)

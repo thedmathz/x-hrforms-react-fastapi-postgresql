@@ -43,5 +43,5 @@ class PositionRepository:
 
     async def delete(self, db: AsyncSession, obj: Position): 
         await db.delete(obj)
-        return await db.commit()
+        await db.commit()
 

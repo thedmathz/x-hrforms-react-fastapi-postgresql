@@ -49,6 +49,16 @@ APP_ACTIONS = [
         "name"          : "Print Application", 
         "rank"          : 10,
     }, 
+    {
+        "app_action_id" : 11,
+        "name"          : "Recommend", 
+        "rank"          : 11,
+    }, 
+    {
+        "app_action_id" : 12,
+        "name"          : "Approve", 
+        "rank"          : 12,
+    }, 
 ]
 
 APP_MODULES = [
@@ -68,7 +78,7 @@ APP_MODULES = [
         "app_module_id" : 3, 
         "name"          : "For Approvals", 
         "rank"          : 3,
-        "actions"       : [1, 2, 3, 4, 10],
+        "actions"       : [1, 2, 3, 4, 10, 11, 12], 
     }, 
     {
         "app_module_id" : 4, 

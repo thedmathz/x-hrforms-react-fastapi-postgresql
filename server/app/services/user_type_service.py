@@ -95,6 +95,8 @@ class UserTypeService:
         
         user_type_id = await self.repo.insert(db, form_request.name, form_request.description)
         await self.repo.bulk_user_type_access_insert(db, user_type_id, form_request.app_module_action_ids)
+            
+        data['id'] = user_type_id
         
         return JSONResponse(status_code=200, content=data)
 
@@ -141,6 +143,8 @@ class UserTypeService:
                 }) 
                 
             data['module_actions'] = module_actions
+            
+        data['id'] = id 
             
         return JSONResponse(status_code=200, content=data)
 
@@ -195,6 +199,8 @@ class UserTypeService:
                 }) 
                 
             data['module_actions'] = module_actions
+            
+        data['id'] = id
         
         return JSONResponse(status_code=200, content=data)
 
@@ -269,6 +275,8 @@ class UserTypeService:
                         is_active = 1, 
                     )
                 )
+            
+        data['id'] = id
         
         return JSONResponse(status_code=200, content=data)
 

@@ -2,8 +2,6 @@ from importlib.metadata.diagnose import inspect
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select, insert, delete, update, inspect
 
-from sqlalchemy.dialects.postgresql import insert as pg_insert
-
 from app.models.app_module import App_module
 from app.models.app_action import App_action
 from app.models.app_module_action import App_module_action

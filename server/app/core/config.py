@@ -25,6 +25,8 @@ class Settings(BaseSettings):
     REFRESH_TOKEN_EXPIRE_MINUTES: int
     ACCESS_TOKEN_EXPIRE_MINUTES: int
     EMAIL_OTP_EXPIRY_MINUTES: int
+    
+    FRONTEND_URL: str
 
     @property
     def DATABASE_URL(self) -> str:

@@ -30,7 +30,7 @@ async def edit(id: str, db: AsyncSession = Depends(get_db), current_user_id: str
     return await service.edit(db, id) 
 
 @router.put("/{id}")
-async def update(id: str, form_request: UserInsert, db: AsyncSession = Depends(get_db), current_user_id: str = Depends(get_current_user)):
+async def update(id: str, form_request: UserUpdate, db: AsyncSession = Depends(get_db), current_user_id: str = Depends(get_current_user)):
     return await service.update(db, id, form_request) 
 
 @router.put("/{id}/activate")

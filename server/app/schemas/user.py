@@ -7,7 +7,7 @@ class UserGetRow(BaseModel):
 
 class UserInsert(BaseModel):
     user_type_id    : int 
-    username        : str
+    username        : Optional[str] = ""
     email           : str
     office_id       : int 
     position_id     : int 

@@ -1,0 +1,62 @@
+[
+    {
+        "app_action_id" : 1,
+        "name"          : "Index", 
+        "rank"          : 1
+    }, 
+    {
+        "app_action_id" : 2,
+        "name"          : "Export List", 
+        "rank"          : 2
+    }, 
+    {
+        "app_action_id" : 3,
+        "name"          : "Print List", 
+        "rank"          : 3
+    }, 
+    {
+        "app_action_id" : 4,
+        "name"          : "Add", 
+        "rank"          : 4
+    }, 
+    {
+        "app_action_id" : 5,
+        "name"          : "View", 
+        "rank"          : 5
+    }, 
+    {
+        "app_action_id" : 6,
+        "name"          : "Edit", 
+        "rank"          : 6
+    }, 
+    {
+        "app_action_id" : 7,
+        "name"          : "Delete", 
+        "rank"          : 7
+    }, 
+    {
+        "app_action_id" : 8,
+        "name"          : "Activate", 
+        "rank"          : 8
+    }, 
+    {
+        "app_action_id" : 9,
+        "name"          : "Deactivate", 
+        "rank"          : 9
+    }, 
+    {
+        "app_action_id" : 10,
+        "name"          : "Print Application", 
+        "rank"          : 10
+    }, 
+    {
+        "app_action_id" : 11,
+        "name"          : "Recommend", 
+        "rank"          : 11
+    }, 
+    {
+        "app_action_id" : 12,
+        "name"          : "Approve", 
+        "rank"          : 12
+    } 
+]

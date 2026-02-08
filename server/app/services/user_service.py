@@ -167,6 +167,10 @@ class UserService:
         # check if recommender_id and approver_id exist in users table 
         recommender_app_module_action_id    = await self.repo.get_module_action_id_by_name(db, 'For Approvals', 'Recommend')
         approver_app_module_action_id       = await self.repo.get_module_action_id_by_name(db, 'For Approvals', 'Approve')
+        
+        print(recommender_app_module_action_id)
+        print(approver_app_module_action_id)
+        
         if not await self.repo.validate_recommender_approver_ids(db, int(form_request.recommender_id), int(recommender_app_module_action_id), int(form_request.approver_id), int(approver_app_module_action_id)):
             response_api(400, f"Recommender or Approver does not exist", "Invalid Record")
         
@@ -180,7 +184,7 @@ class UserService:
         await send_email(
             form_request.email, 
             "Welcome to HR Forms", 
-            f"Your temporary password is: {password}. Log in and change your account details immediately in {settings.FRONTEND_URL}", 
+            f"Continue with youe account registration by filling out the remaining details. {settings.FRONTEND_URL}/register?id={data['id']}", 
             True 
         )
         

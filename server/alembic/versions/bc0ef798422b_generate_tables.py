@@ -1,8 +1,8 @@
-"""create tables
+"""generate tables
 
-Revision ID: b02e59d5495e
+Revision ID: bc0ef798422b
 Revises: 
-Create Date: 2026-01-27 17:07:11.743029
+Create Date: 2026-02-08 17:48:40.052413
 
 """
 from typing import Sequence, Union
@@ -12,7 +12,7 @@ import sqlalchemy as sa
 from sqlalchemy.dialects import postgresql
 
 # revision identifiers, used by Alembic.
-revision: str = 'b02e59d5495e'
+revision: str = 'bc0ef798422b'
 down_revision: Union[str, Sequence[str], None] = None
 branch_labels: Union[str, Sequence[str], None] = None
 depends_on: Union[str, Sequence[str], None] = None
@@ -78,6 +78,8 @@ def upgrade() -> None:
     sa.Column('last_name', sa.VARCHAR(length=30), nullable=False),
     sa.Column('gender', sa.SMALLINT(), nullable=False),
     sa.Column('birth_date', sa.DATE(), nullable=True),
+    sa.Column('recommender_id', sa.INTEGER(), nullable=True),
+    sa.Column('approver_id', sa.INTEGER(), nullable=True),
     sa.Column('date_email_validated', postgresql.TIMESTAMP(timezone=True), nullable=True),
     sa.Column('email', sa.TEXT(), nullable=False),
     sa.Column('email_otp', sa.VARCHAR(length=6), nullable=False),
@@ -86,8 +88,10 @@ def upgrade() -> None:
     sa.Column('forgot_password_otp_valid_until', postgresql.TIMESTAMP(timezone=True), nullable=True),
     sa.Column('picture_path', sa.TEXT(), nullable=False),
     sa.Column('status', sa.SMALLINT(), nullable=False),
+    sa.ForeignKeyConstraint(['approver_id'], ['users.user_id'], ),
     sa.ForeignKeyConstraint(['office_id'], ['offices.office_id'], ),
     sa.ForeignKeyConstraint(['position_id'], ['positions.position_id'], ),
+    sa.ForeignKeyConstraint(['recommender_id'], ['users.user_id'], ),
     sa.ForeignKeyConstraint(['user_type_id'], ['user_types.user_type_id'], ),
     sa.PrimaryKeyConstraint('user_id')
     )

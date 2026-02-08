@@ -14,8 +14,8 @@ async def init():
     print("\n🚀 Initializing Database...\n")
     if not await check_has_admin_user():
         await create_actions()
-        # await create_modules()
-        # await create_module_actions()
+        await create_modules()
+        await create_module_actions()
         # await create_office()
         # await create_position()
         # await create_user_type_admin()

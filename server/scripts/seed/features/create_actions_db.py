@@ -12,12 +12,12 @@ DATA_FILE = Path("scripts/seed/data/actions.json")
 
 async def create_actions():
     async with AsyncSessionLocal() as db:
-        print("\n🌱 Bulk inserting ACTIONS...\n")
+        print("\n🌱 Bulk inserting ACTIONS...")
         data = json.loads(DATA_FILE.read_text())
         stmt = insert(App_action)
         await db.execute(stmt, data)
         await db.commit()
-        print("\n✅ Bulk inserting ACTIONS complete!\n")
+        print("✅ Bulk inserting ACTIONS complete!")
 
 if __name__ == "__main__":
     asyncio.run(create_actions())

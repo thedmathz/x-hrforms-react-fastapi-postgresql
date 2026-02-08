@@ -1,6 +1,5 @@
 from fastapi import APIRouter
 from app.api.v1.endpoints import (
-    starter,
     register,
     forgot_password,
     authentication,
@@ -17,7 +16,6 @@ from app.api.v1.endpoints import (
 
 api_router = APIRouter()    
 
-api_router.include_router(starter.router, prefix="/starter", tags=["Starter"])
 api_router.include_router(register.router, prefix="/register", tags=["Register"])
 api_router.include_router(forgot_password.router, prefix="/forgot-password", tags=["Forgot Password"])
 api_router.include_router(authentication.router, prefix="/authentication", tags=["Authentication"])

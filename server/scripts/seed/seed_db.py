@@ -23,8 +23,10 @@ async def init():
                 office_id = await create_office(db)
                 position_id = await create_position(db)
                 user_type_id = await create_user_type_admin(db)
-                # await create_user_admin(db)
-    print("\n🎉 Database fully initialized!\n")
+                await create_user_admin(db, int(user_type_id), int(office_id), int(position_id))
+                print("\n🎉 Database fully initialized!\n")
+            else:
+                print("\n⚠️  Admin user already exists. Skipping seeding.\n")
 
 if __name__ == "__main__":
     asyncio.run(init())

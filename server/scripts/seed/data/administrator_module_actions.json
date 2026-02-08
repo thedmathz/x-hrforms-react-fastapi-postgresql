@@ -1,0 +1,26 @@
+[
+    {
+        "app_module_id"     : 1, 
+        "app_action_ids"    : [1]
+    }, 
+    {
+        "app_module_id"     : 3, 
+        "app_action_ids"    : [1, 2, 3, 5, 10, 11, 12]
+    }, 
+    {
+        "app_module_id"     : 4, 
+        "app_action_ids"    : [1, 4, 5, 6]
+    }, 
+    {
+        "app_module_id"     : 5, 
+        "app_action_ids"    : [1, 4, 5, 6]
+    }, 
+    {
+        "app_module_id"     : 6, 
+        "app_action_ids"    : [1, 4, 5, 6, 8, 9] 
+    }, 
+    {
+        "app_module_id"     : 7, 
+        "app_action_ids"    : [1, 4, 5, 6]
+    } 
+]
